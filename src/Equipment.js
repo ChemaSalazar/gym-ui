@@ -5,6 +5,7 @@
 * */
  import React from "react";
  import "./Equipment.css";
+ import eventBus from "./Components/EventBus/EventBus";
 
 class Equipment extends React.Component{
     //We instantiate our gym equipment.
@@ -18,6 +19,20 @@ class Equipment extends React.Component{
             activeText: "Start"
         };
     }
+
+    componentDidMount() {
+
+        eventBus.on("toggleMachine", (data) =>
+
+            this.setState({ isOn: data.isOn })
+        );
+
+    }
+
+    unmountToggle(){
+        eventBus.remove("toggleMachine");
+    }
+
 
     /*Methods that update our state data.*/
     changeUsage = () =>{

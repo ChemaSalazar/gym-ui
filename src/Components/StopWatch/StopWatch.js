@@ -3,6 +3,7 @@ import "./StopWatch.css";
 import Timer from "../Timer/Timer";
 import ControlButtons from "../ControlButtons/ControlButtons";
 import Equipment from "../../Equipment";
+import eventBus from "../EventBus/EventBus";
 
 function StopWatch() {
     const [isActive, setIsActive] = useState(false);
@@ -27,12 +28,15 @@ function StopWatch() {
     const handleStart = () => {
         setIsActive(true);
         setIsPaused(false);
+        eventBus.dispatch("toggleMachine",{isOn: true});
 
 
     };
 
     const handlePauseResume = () => {
         setIsPaused(!isPaused);
+        eventBus.dispatch("toggleMachine",{isOn: false });
+
     };
 
     const handleReset = () => {
