@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Equipment from './Equipment';
 import StopWatch from "./Components/StopWatch/StopWatch";
 import reportWebVitals from './reportWebVitals';
 
@@ -9,7 +8,7 @@ ReactDOM.render(
   <React.StrictMode>
     {/*<App />*/}
       <StopWatch/>
-      <Equipment/>
+      {/*<Equipment/>*/}
   </React.StrictMode>,
   document.getElementById('root')
 );
