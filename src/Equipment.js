@@ -20,6 +20,8 @@ class Equipment extends React.Component{
         };
     }
 
+    list = ["Treadmill", "Stepper", "Indoor Bike"];
+
     componentDidMount() {
 
         eventBus.on("toggleMachine", (data) =>
@@ -55,24 +57,23 @@ class Equipment extends React.Component{
 
 
 
-
-
-
     /*render
     *
     * we are using tailwind css
     * */
     render() {
         return(
-            <div className={"container mx-auto"}>
-                <h1>Current Equipment: {this.state.name}</h1>
-                <h2>Brand: {this.state.brand}</h2>
-                <h3>Current usage counter: {this.state.usage}</h3>
-                <h3>This machine is active: {String(this.state.isOn)}</h3>
+            <div className={"container mx-auto equipment-interface"}>
+                <h1>{this.state.name} by {this.state.brand}</h1>
+
                 {/*<button type={"button"} onClick={this.changeUsage}>Click Me to Increase Usage</button>*/}
                 <div className={"bg-slate-50"}>
                     <button id={"main-button"} className={"flex mx-auto text-rose-900"} type={"button"} onClick={this.changeActive}>Click Me to {this.state.activeText} machine</button>
                 </div>
+                <hr/>
+                <h3>Switch Machine: </h3>
+                <ul>{this.list.map(eq=>(<li><button className={"bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"} type={"button"}>{eq}</button></li>))}</ul>
+
             </div>
         );
     }
