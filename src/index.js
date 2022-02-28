@@ -14,7 +14,6 @@ ReactDOM.render(
     {/*<App />*/}
       <div className={"container mx-auto equipment-interface"}>
             {/*<Equipment></Equipment>*/}
-          <hr/>
           <BrowserRouter>
               <Routes>
                   <Route path={'/'} element={<Layout/>}>
