@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./StopWatch.css";
 import Timer from "../Timer/Timer";
 import ControlButtons from "../ControlButtons/ControlButtons";
-import Equipment from "../../Equipment";
 import eventBus from "../EventBus/EventBus";
 
 function StopWatch() {
@@ -47,7 +46,6 @@ function StopWatch() {
     return (
         <div className="stop-watch">
             <Timer time={time} />
-            <Equipment/>
             <ControlButtons
                 active={isActive}
                 isPaused={isPaused}

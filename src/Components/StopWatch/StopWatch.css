@@ -1,7 +1,7 @@
 .stop-watch{
-    height: 80vh;
+    height: 30vh;
     width: 100vw;
-    background-color: #0d0c1b;
+    /*background-color: #0d0c1b;*/
     border-radius: 2rem;
     display: flex;
     flex-direction: column;

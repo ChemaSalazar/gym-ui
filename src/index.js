@@ -1,14 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Landing from "./Pages/Landing";
+import IndoorBike from "./Pages/IndoorBike";
 import './index.css';
-import StopWatch from "./Components/StopWatch/StopWatch";
 import reportWebVitals from './reportWebVitals';
-// import Equipment from "./Equipment";
+import Layout from "./Pages/Layout";
+import Treadmill from "./Pages/Treadmill";
+import StepMachine from "./Pages/StepMachine";
 
 ReactDOM.render(
   <React.StrictMode>
     {/*<App />*/}
-      <StopWatch/>
+      <div className={"container mx-auto equipment-interface"}>
+            {/*<Equipment></Equipment>*/}
+          <hr/>
+          <BrowserRouter>
+              <Routes>
+                  <Route path={'/'} element={<Layout/>}>
+                      <Route index element={<Landing/>} />
+                      <Route path={"Treadmill"} element={<Treadmill/>} />
+                      <Route path={"IndoorBike"} element={<IndoorBike/>} />
+                      <Route path={"StepMachine"} element={<StepMachine/>} />
+                  </Route>
+              </Routes>
+          </BrowserRouter>
+      </div>
+
       {/*<Equipment/>*/}
   </React.StrictMode>,
   document.getElementById('root')
